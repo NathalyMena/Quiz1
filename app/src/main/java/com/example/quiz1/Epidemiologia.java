@@ -53,6 +53,17 @@ public class Epidemiologia extends AppCompatActivity {
         );
     }
 
+    public void resultado(CheckBox check) {
+        resultado = false;
+        if (check.isChecked()) {
+            Valor = Valor + 3;
+            resultado = true;
+        } else if (resultado) {
+            Valor = Valor - 3;
+            resultado = false;
+        }
+    }
+
     public void isCheckboxClicked() {
         Continuar2.setEnabled(false);
         Continuar2.setBackgroundResource(R.drawable.boton2);
@@ -86,14 +97,5 @@ public class Epidemiologia extends AppCompatActivity {
 
     }
 
-    public void resultado(CheckBox check) {
-        resultado = false;
-        if (check.isChecked()) {
-            Valor = Valor + 3;
-            resultado = true;
-        } else if (resultado) {
-            Valor = Valor - 3;
-            resultado = false;
-        }
-    }
+
 }

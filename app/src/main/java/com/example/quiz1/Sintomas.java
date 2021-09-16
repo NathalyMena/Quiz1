@@ -60,6 +60,16 @@ public class Sintomas extends AppCompatActivity {
         );
 
     }
+    private void calificacion(CheckBox check) {
+        Valor = false;
+        if (check.isChecked() && !Valor) {
+            paciente = paciente + 4;
+            Valor = true;
+        } else if (Valor) {
+            paciente = paciente - 4;
+            Valor = false;
+        }
+    }
 
     private void isCheckboxClicked() {
         new Thread(
@@ -90,14 +100,5 @@ public class Sintomas extends AppCompatActivity {
         ).start();
     }
 
-    private void calificacion(CheckBox check) {
-        Valor = false;
-        if (check.isChecked() && !Valor) {
-            paciente = paciente + 4;
-            Valor = true;
-        } else if (Valor) {
-            paciente = paciente - 4;
-            Valor = false;
-        }
-    }
+
 }
